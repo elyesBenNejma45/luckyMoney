@@ -1,0 +1,33 @@
+function luckyMoney($money,$giftees) {
+    if($money == 0 || $money <8 || $money<$giftees || $giftees == 0){
+        return 0;
+    }
+    if($money % 8 == 0){
+        if($money/8 == $giftees){
+            return $giftees;
+        }
+        if($money/8 < $giftees){
+            return $money/8 - 1;
+        } 
+        if($money/8 > $giftees){
+            return $giftees;
+        } 
+    }
+    if($money % 8 == 4){
+        return 0;
+    }
+    if($money % 8 !== 0){
+        if(intval($money/8) == $giftees){
+            return $giftees;
+        }
+        if(intval($money/8) < $giftees){
+            return intval($money/8);
+        } 
+        if(intval($money/8) > $giftees){
+            return $giftees;
+        } 
+    }
+    
+}
+    echo luckyMoney(9,0);
+?>
